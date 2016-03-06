@@ -93,12 +93,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BinaryTree.cpp" />
+    <ClCompile Include="HashMap.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="netmethods.cpp" />
     <ClCompile Include="splitbuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="HashMap.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="netmethod.h" />

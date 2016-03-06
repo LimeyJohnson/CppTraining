@@ -23,17 +23,18 @@ public:
 	}
 	void insert(const T& it, int pos)
 	{
-		if (pos > listSize) { // Throw Exception 
-		}
-		for (int i = listSize; i > pos; i--)
-		{
-			m_data[i] = m_data[i - 1];
-		}
+		//if (listSize == maxSize) doubleSize();
+
+	//	for (int i = listSize; i > pos; i--)
+	//	{
+	//		m_data[i] = m_data[i - 1];
+	//	}
 		m_data[pos] = it;
-		listsize++;
+		//listsize++;
 	}
 	void append(const T& it)
 	{
+		if (listSize == maxSize) doubleSize();
 		m_data[listSize++] = it;
 	}
 	int length() const { return listSize; }
@@ -43,6 +44,16 @@ public:
 			//throw exception
 		}
 		return m_data[pos];
+	}
+private:
+	void doubleSize()
+	{
+		int newListSize = maxSize * 2;
+		T * new_data = new T[newListSize];
+		memcpy(new_data, m_data, maxSize * sizeof(T));
+		delete[] m_data;
+		m_data = new_data;
+		maxSize = newListSize;
 	}
 };
 

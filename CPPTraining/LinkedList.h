@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <string>
 #include "Node.h"
@@ -98,3 +99,4 @@ LinkedList<T>::~LinkedList()
 	}
 	delete head;
 }
+

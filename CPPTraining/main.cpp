@@ -7,6 +7,7 @@
 #include "BinaryTree.h"
 #include "StringNode.h"
 #include "List.h"
+#include "HashMap.h"
 using namespace std;
 
 
@@ -75,20 +76,41 @@ void TestBinaryTree()
 void TestList()
 {
 	List<int> l(10);
-	for (int x = 0; x < 10; x++)
+	for (int x = 0; x < 2000000; x++)
 	{
 		l.append(x);
 	}
 	for (int y = 0; y < l.length(); y++)
 	{
-		cout << l.at(y) << endl;
+		//cout << l.at(y) << endl;
+		if (l.at(y) != y) cout << "Failed test on " << y << endl;
 	}
+
+	List<string> s(2);
+	s.append("Andrew"); s.append("is "); s.append("name "); s.append("My ");
+	for (int i = (s.length() - 1); i >= 0; i--)
+	{
+		cout << s.at(i);
+	}
+	cout << endl;
+}
+void TestHash()
+{
+	IntHashMap maps;
+	for (int x = 0; x < 10000; x++)
+	{
+		maps.Insert(x, x);
+	}
+	cout << maps[10] << endl;
+	cout << maps[99] << endl;
+	cout << maps[123] << endl;
 }
 int main(){
     //find(20);
     //testLinkedList();
 	//TestBinaryTree();
-	TestList();
-	return 1;
+	//TestList();
+	TestHash();
+	return 0;
 
 }
