@@ -96,7 +96,7 @@ void TestList()
 }
 void TestHash()
 {
-	IntHashMap maps;
+	IntHashMap<int, int> maps;
 	for (int x = 0; x < 10000; x++)
 	{
 		maps.Insert(x, x);
