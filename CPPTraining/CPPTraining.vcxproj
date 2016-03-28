@@ -99,11 +99,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinaryTree.h" />
+    <ClInclude Include="BubbleSort.h" />
     <ClInclude Include="HashMap.h" />
     <ClInclude Include="linkedlist.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="MergeSort.h" />
     <ClInclude Include="netmethod.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="QuickSort.h" />
     <ClInclude Include="splitbuffer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

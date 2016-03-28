@@ -1,5 +1,9 @@
 #include <iostream>
+#include <vector>
 #include <string>
+#include <stdlib.h>
+#include <time.h>
+#include <ctime>
 #include "splitbuffer.h"
 #include "linkedlist.h"
 #include "netmethod.h"
@@ -8,6 +12,9 @@
 #include "StringNode.h"
 #include "List.h"
 #include "HashMap.h"
+#include "BubbleSort.h"
+#include "QuickSort.h"
+#include "MergeSort.h"
 using namespace std;
 
 
@@ -105,12 +112,66 @@ void TestHash()
 	cout << maps[99] << endl;
 	cout << maps[123] << endl;
 }
+vector<int>  GenerateRandomArray(int size)
+{
+	srand(time(NULL));
+	vector<int> nums(size);
+	for (int x = 0; x < size; x++)
+	{
+		nums[x] = rand() % 1000000;
+	}
+	return nums;
+}
+void TestBubbleSort(vector<int> nums)
+{
+	BubbleSort sorter;
+	vector<int> result = sorter.Sort(nums);
+	
+	//for (unsigned int x = 0; x < result.size(); x++)
+	//{
+	//	cout << result[x] << endl;
+	//}
+}
+void TestQuickSort(vector<int> nums)
+{
+	QuickSort sorter;
+	vector<int> result = sorter.Sort(nums);
+
+	//for (int x = 0; x < result.size(); x++)
+	//{
+	//	cout << result[x] << endl;
+	//}
+}
+void TestMergeSort(vector<int> nums)
+{
+	MergeStort sorter;
+	vector<int> result = sorter.Sort(nums);
+	/*for (int x = 0; x < result.size(); x++)
+	{
+		cout << result[x] << endl;
+	}*/
+}
 int main(){
     //find(20);
     //testLinkedList();
 	//TestBinaryTree();
 	//TestList();
-	TestHash();
+	//TestHash();
+	int size = 10000;
+	vector<int> bubbleNums = GenerateRandomArray(size);
+	vector<int> quickNums(bubbleNums);
+	vector<int> mergeNums(bubbleNums);
+	unsigned int start = clock();
+	TestBubbleSort(bubbleNums);
+	unsigned int middle = clock();
+	TestQuickSort(quickNums);
+	unsigned int middle2 = clock();
+	TestMergeSort(mergeNums);
+	unsigned int end = clock();
+
+	cout << "BubbleSort: " << middle - start << endl;
+	cout << "QuickSort: " << middle2 - middle;
+	cout << "MergeSort: " << end - middle2;
 	return 0;
 
 }
